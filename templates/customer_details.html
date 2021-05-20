@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Customer Details{% endblock title %}
+
+{% block body %}
+<h2 style="margin-top: 2%; margin-left: 15%;"><strong style="color:#5B1548 ;font-weight:900">List Of A/C Holders</strong></h2>
+<img src="/static/img/c6.png" width="550" height="550" align="right">
+<form action="/view" method="POST" >
+<table class="table table-sm text-center" style="
+        border: solid green 5px;
+        margin-top: 3.5%;
+        margin-left: 3%;
+        width: 645px;
+        height: auto;
+        ">
+    <thead class="table-danger">
+    <tr>
+      <th scope="col">A/c No.</th>
+      <th scope="col">Account Holder</th>
+      <th scope="col">Email Id</th>
+      <th scope="col">Current Balance</th>
+      <th scope="col">SELECT</th>
+    </tr>
+  </thead>
+  {% for details in cust_details %}
+  <tbody>
+    <tr>
+      <td style="background-color:#F9EBEA">{{details.account_no}}</td>
+      <td style="background-color:#F9EBEA">{{details.name}}</td>
+      <td style="background-color:#F9EBEA">{{details.email}}</td>
+      <td style="background-color:#F9EBEA">{{details.amount}}</td>
+      <td style="background-color:#F9EBEA"><button type="submit" name="submit" class="btn btn-sm btn-success" value="{{details.name}}">Transfer</button></td>
+      {% csrf_token %}
+    </tr>
+  </tbody>
+  {% endfor %}
+</table>
+</form>
+{% endblock body %}

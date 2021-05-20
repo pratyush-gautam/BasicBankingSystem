@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+<style>
+.container{
+    background-color: #FF4136;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>
+
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+<div class="container" style="
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    left: 25%;
+    top: 55%;
+    transform: translate(-50%, -50%);">
+
+    <div class="box" style="
+        width: 400px;
+
+        height: 400px;
+        position: absolute;
+        left: 60%;
+        top: 21%;
+        bottom: 15%;
+        right: 12%;">
+
+          <div class="text-center">
+              <h3 style="font-size: 60px; padding: 10px; font-weight: bold;">Welcome to <strong style="color:#008000;">TSF Bank</strong></h3>
+              <h4 class="text-center" style="color:#8B0000;font-weight:800;">Please Choose Your Service Here !</h4>
+          </div>
+          <div class="box text-center" style="
+              width: 375px;
+              height: 150px;
+              position:absolute;
+              bottom: 3%;
+              ">
+              <a type="button" class="btn btn-warning" href="{% url 'customer_details' %}"><strong>Customers</strong></a>
+            <a type="button" class="btn btn-warning" href="{% url 'customer_details' %}"><strong>Transactions</strong></a>
+
+
+          </div>
+      </div>
+</div>
+<img src="/static/img/c8.png" width="550" height="550" align="right">
+
+<img src="/static/img/c1.png" width="320" height="320" align="bottom">
+{% endblock body %}

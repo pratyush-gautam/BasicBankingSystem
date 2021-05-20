@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Transaction History
+{% endblock title %}
+{% block body %}
+<section class="content customer">
+<h2 class="text-center"><strong style="color:crimson;">Transaction History</strong></h2>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col" style="background-color:#F1C40F">Sender's Name</th>
+      <th scope="col"style="background-color:#F1C40F">Sender's Account No.</th>
+      <th scope="col"style="background-color:#F1C40F">Sender's Current Balance</th>
+      <th scope="col"style="background-color:#F1C40F">Money Deposit</th>
+      <th scope="col"style="background-color:#F1C40F">Receiver's Name</th>
+      <th scope="col"style="background-color:#F1C40F">Date </th>
+    </tr>
+  </thead>
+  {% for details in history %}
+  <tbody>
+    <tr>
+      <td style="background-color:#EAF2F8">{{details.source_name}}</td>
+      <td style="background-color:#EAF2F8">{{details.source_acc_no}}</td>
+      <td style="background-color:#EAF2F8">{{details.Current_balance}}</td>
+      <td style="background-color:#EAF2F8">{{details.money_deposit}}</td>
+      <td style="background-color:#EAF2F8">{{details.destination_name}}</td>
+      <td style="background-color:#EAF2F8">{{details.date}}</td>
+    </tr>
+  </tbody>
+  {% endfor %}
+</table>
+</section>
+{% endblock body %}
