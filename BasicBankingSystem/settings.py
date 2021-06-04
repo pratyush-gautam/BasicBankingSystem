@@ -25,7 +25,7 @@ SECRET_KEY = '3=%047z1&yyj9q%*xpket@b7hmjqrp(fx_v2vfu$ih3(jyrcz^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://pizzabank.herokuapp.com/"]
+ALLOWED_HOSTS = ["https://pizzabank.herokuapp.com/", "http://127.0.0.1"]
 
 
 # Application definition
